@@ -1,0 +1,25 @@
+.headerTop {
+    .content {
+        padding: 15px 0;
+        width: 85%;
+        margin: 0 auto;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        .info{
+            display: flex;
+            gap: 35px;
+            span{
+                color: #179510;
+                padding: 0 15px 0 0;
+            }
+        }
+        .social{
+            display: flex;
+            gap: 20px;
+        }
+    }
+
+    background-color: black;
+}
