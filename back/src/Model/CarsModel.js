@@ -1,19 +1,15 @@
 import mongoose, { Schema } from "mongoose";
 
-
-
-const rentallyCars = new Schema({
+const rentallyCarsScheme = new Schema({
     price: Number,
     type: String,
     year: Number,
     fuel: String,
     description: String,
+    image: String,
     color: String,
-    wishlistCount: {
-        type: Number,
-        default: 0,
-    },
+    name:String,
 });
 
-export const RentallyCars = mongoose.model('RentallyCars', rentallyCars);
+export const RentallyCarsModel = mongoose.model('RentallyCars', rentallyCarsScheme);
 

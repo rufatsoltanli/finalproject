@@ -47,20 +47,22 @@ function Header() {
                 </div>
             </div>
             <div className="navBar">
-                <div className="icon">
-                    <img src="https://www.madebydesignesia.com/themes/rentaly/images/logo.png" alt="" />
-                </div>
-                <div className="links">
-                    <NavLink>Home</NavLink>
-                    <NavLink>Cars</NavLink>
-                    <NavLink>Booking</NavLink>
-                    <NavLink>News</NavLink>
-                    <NavLink>About Us</NavLink>
-                </div>
-                <div className="yourAccount">
-                    <NavLink>Your Profile</NavLink>
-                    <NavLink>Register</NavLink>
-                    <NavLink>Login</NavLink>
+                <div className="content">
+                    <div className="icon">
+                        <img src="https://www.madebydesignesia.com/themes/rentaly/images/logo.png" alt="" />
+                    </div>
+                    <div className="links">
+                        <NavLink to={"/"}>Home</NavLink>
+                        <NavLink to={'/carsPage/'}>Cars</NavLink>
+                        <NavLink to={'/bookingPage/'}>Booking</NavLink>
+                        <NavLink to={'/newsPage/'}>News</NavLink>
+                        <NavLink to={'/aboutUsPage/'}>About Us</NavLink>
+                    </div>
+                    <div className="yourAccount">
+                        <NavLink to={'/profilePage/'}>Your Profile</NavLink>
+                        <NavLink to={'/registerPage/'}>Register</NavLink>
+                        <NavLink to={'/loginPage/'}>Login</NavLink>
+                    </div>
                 </div>
             </div>
         </>

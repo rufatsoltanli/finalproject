@@ -1,9 +1,9 @@
-import { RentallyCars } from "../Model/CarsModel"
+import { RentallyCarsModel } from "../Model/CarsModel.js"
 
 
 export const getCars = async (req, res) => {
     try {
-        const data = await RentallyCars.find({})
+        const data = await RentallyCarsModel.find({})
         res.send(data)
     } catch (error) {
         res.send(error.message)
@@ -12,7 +12,7 @@ export const getCars = async (req, res) => {
 export const getCarsById = async (req, res) => {
     try {
         const { id } = req.params
-        const data = await RentallyCars.findBy({})
+        const data = await RentallyCarsModel.findById(id)
         res.send(data)
     } catch (error) {
         res.send(error.message)
@@ -21,8 +21,8 @@ export const getCarsById = async (req, res) => {
 
 export const postCars = async (req, res) => {
     try {
-        const { price, type, year, fuel, description, color } = req.body
-        const data = new RentallyCars({ price, type, year, fuel, description, color })
+        const { price, type, year, fuel, description, color, image, name } = req.body
+        const data = new RentallyCarsModel({ price, type, year, fuel, description, color, image, name })
         await data.save()
         res.send(data)
     } catch (error) {
@@ -33,8 +33,8 @@ export const postCars = async (req, res) => {
 export const updateCarByID = async (req, res) => {
     try {
         const { id } = req.params
-        const { price, type, year, fuel, description, color } = req.body
-        const data = await RentallyCars.findByIdAndUpdate(id, { price, type, year, fuel, description, color })
+        const { price, type, year, fuel, description, color, image, name } = req.body
+        const data = await RentallyCarsModel.findByIdAndUpdate(id, { price, type, year, fuel, description, color, image, name })
         res.send(data)
     } catch (error) {
         res.send(error.message)
@@ -44,7 +44,7 @@ export const updateCarByID = async (req, res) => {
 export const deleteCarByID = async (req, res) => {
     try {
         const { id } = req.params
-        const data = await RentallyCars.findByIdAndDelete(id)
+        const data = await RentallyCarsModel.findByIdAndDelete(id)
         res.send(data)
     } catch (error) {
         res.send(error.message)

@@ -7,19 +7,57 @@
         display: flex;
         justify-content: space-between;
         font-size: 14px;
-        .info{
+
+        .info {
             display: flex;
             gap: 35px;
-            span{
+
+            span {
                 color: #179510;
                 padding: 0 15px 0 0;
             }
         }
-        .social{
+
+        .social {
             display: flex;
             gap: 20px;
         }
     }
 
     background-color: black;
+}
+
+.navBar {
+    width: 100%;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    .content {
+        width: 85%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+
+        a {
+            color: black
+        }
+
+        .active {
+            color: #179510;
+        }
+
+        .links {
+            a {
+                padding: 0 5px;
+            }
+        }
+
+        .yourAccount {
+            a {
+                padding: 0 5px;
+            }
+        }
+    }
 }

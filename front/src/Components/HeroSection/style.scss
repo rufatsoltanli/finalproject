@@ -1,0 +1,56 @@
+.heroSection {
+    height: 105vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    background-image: url("https://www.madebydesignesia.com/themes/rentaly/images/background/7.jpg");
+    background-size: cover;
+    background-position: 100% 150%;
+    padding: 0 10%;
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .header {
+            color: #1ecb15;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .exploreTheWorld {
+            font-size: 52px;
+            font-weight: bold;
+            color: #031b4e;
+        }
+
+        .smallText {
+            color: #4d5b7c;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            .greenButton {
+                .commonButton {
+                    background-color: #179510;
+                }
+            }
+
+            .blackButton {
+                .commonButton {
+                    background-color: black;
+                }
+            }
+        }
+    }
+
+    .car {
+
+        img {
+            width: 100%;
+        }
+    }
+}

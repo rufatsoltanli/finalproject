@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { deleteCarByID, getCars, getCarsById, postCars, updateCarByID } from "../Controller/CarsController"
+import { deleteCarByID, getCars, getCarsById, postCars, updateCarByID } from "../Controller/CarsController.js"
 
 export const CarsRouter = Router()
 
