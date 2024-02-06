@@ -1,0 +1,21 @@
+.commonTitle {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px 0;
+
+    .mainText {
+        font-size: 42px;
+        color: #031b4e;
+        font-weight: 600;
+    }
+
+    .smallText {
+        color: #4d5b7c;
+        font-size: 16px;
+        width: 30%;
+    }
+}

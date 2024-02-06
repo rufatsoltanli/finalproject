@@ -1,0 +1,40 @@
+.exploreTheWorldSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 85%;
+    margin: 2% auto;
+    gap: 10px;
+
+    .commonTitle {
+        text-align: left;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        h4 {
+            color: #031b4e;
+            font-size: 20px;
+        }
+
+        .text {
+            color: #4d5b7c;
+        }
+
+        .icon {
+            i {
+                font-size: 40px;
+            }
+
+            background-color: #1ecb15;
+            border-radius: 10px;
+            padding: 20px;
+            width: max-content;
+            height: max-content;
+
+
+        }
+    }
+}

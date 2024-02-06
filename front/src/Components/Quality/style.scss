@@ -1,0 +1,72 @@
+.qualitySection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 60vh;
+
+    margin: 2% 0;
+
+    .image {
+        background-image: url("https://www.endurancewarranty.com/wp-content/uploads/2017/08/Vehicle-Inspection.jpg");
+        background-size: cover;
+    }
+
+    .content {
+        padding: 45px;
+
+        .categories {
+            display: flex;
+            flex-direction: column;
+
+            .buttons {
+                display: flex;
+                align-items: center;
+                gap: 45px;
+                justify-content: center;
+                padding: 15px 0 25px 0;
+
+                .button {
+                    padding: 6px 15px;
+                    color: #4d5b7c;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
+                .active {
+                    background-color: #1ecb15;
+                    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+                    color: white;
+                    border-radius: 5px;
+                }
+
+            }
+
+            .showText {
+                animation-name: scaling;
+                animation-duration: 550ms;
+                animation-fill-mode: backwards;
+
+                @keyframes scaling {
+                    0% {
+                        opacity: 0;
+                        scale: 0.1;
+                    }
+
+                    100% {
+                        opacity: 1;
+                        scale: 1;
+                    }
+                }
+
+                div {
+                    color: #4d5b7c;
+                }
+
+                width: 70%;
+                margin: 0 auto;
+                text-align: left;
+            }
+        }
+    }
+}
