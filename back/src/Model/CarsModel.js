@@ -13,3 +13,4 @@ const rentallyCarsScheme = new Schema({
 
 export const RentallyCarsModel = mongoose.model('RentallyCars', rentallyCarsScheme);
 
+    

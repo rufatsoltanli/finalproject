@@ -26,7 +26,15 @@ function OurVehicle() {
                     height: "100%",
                     gap: '1rem',
                     perPage: 3,
-                    focus  : 'center',
+                    focus: 'center',
+                    breakpoints: {
+                        1050: {
+                            perPage: 2
+                        },
+                        750: {
+                            perPage: 1,
+                        }
+                    }
                 }}>
                     {apiData && apiData.map((x) => (
                         <SplideSlide>

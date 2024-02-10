@@ -1,7 +1,7 @@
 .qualitySection {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 60vh;
+    min-height: 60vh;
 
     margin: 2% 0;
 
@@ -67,6 +67,43 @@
                 margin: 0 auto;
                 text-align: left;
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .qualitySection {
+        grid-template-columns: 1fr;
+
+        .content {
+            padding: 0px;
+        }
+
+        .image {
+            height: 30vh;
+            width: 99%;
+        }
+    }
+}
+
+@media only screen and (max-width:370px) {
+    .qualitySection {
+
+        .content {
+            padding: 0px;
+
+            .categories {
+                padding: 0 0 !important;
+
+                .buttons {
+                    gap: 5px;
+                }
+            }
+        }
+
+        .image {
+            height: 30vh;
+            width: 99%;
         }
     }
 }

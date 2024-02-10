@@ -1,5 +1,5 @@
 .heroSection {
-    height: 105vh;
+    min-height: 105vh;
     display: grid;
     justify-content: center;
     align-items: center;
@@ -33,6 +33,7 @@
         .buttons {
             display: flex;
             gap: 15px;
+
             .greenButton {
                 .commonButton {
                     background-color: #179510;
@@ -51,6 +52,32 @@
 
         img {
             width: 100%;
+        }
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .heroSection {
+        grid-template-columns: 1fr;
+        padding: 10% 0;
+    }
+}
+
+@media only screen and (max-width:370px) {
+    .heroSection {
+
+        .text {
+            padding: 0px;
+
+            .buttons {
+                gap: 3px;
+            }
+
+        }
+
+        .image {
+            height: 30vh;
+            width: 99%;
         }
     }
 }

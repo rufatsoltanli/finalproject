@@ -1,13 +1,14 @@
 .ourVehicle {
     margin: 4% 0;
+
     .slide {
         margin: 0 auto;
         width: 80%;
 
         .card {
             padding: 13px;
-            width: 400px;
-            height: 390px;
+            max-width: 400px;
+            min-height: 390px;
             border: 1px solid gray;
             border-radius: 10px;
             display: flex;
@@ -85,6 +86,17 @@
                         border-radius: 10px;
                     }
                 }
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 750px) {
+    .ourVehicle {
+        .slide {
+            .card {
+                margin: 0 auto;
             }
         }
     }
