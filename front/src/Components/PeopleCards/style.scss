@@ -1,0 +1,76 @@
+.peopleCards {
+    display: flex;
+
+    justify-content: space-evenly;
+
+    .peopleCard {
+        max-width: 433px;
+        min-height: 610px;
+        transition: .4s !important;
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+
+        .header {
+            font-weight: 700;
+            font-size: 22px;
+        }
+
+        .text {
+            color: rgba(255, 255, 255, 0.726);
+        }
+
+        .name {
+            color: rgba(255, 255, 255, 0.726);
+        }
+
+        &:hover img {
+            scale: 1.2;
+
+        }
+
+        img {
+            transition: .4s !important;
+            width: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            z-index: 0;
+            left: 0;
+        }
+
+        &:hover {
+            background-size: 120%;
+            transition: .4s;
+
+        }
+
+        .overlay {
+            height: 100%;
+            position: relative;
+            z-index: 3;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            background: linear-gradient(0deg, rgba(30, 30, 30, 0) 30%, rgba(30, 30, 30, 1) 100%);
+            gap: 15px;
+
+            .icon {
+                align-self: end;
+                width: max-content;
+                font-size: 40px;
+                color: #1ecb15;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .peopleCards {
+        flex-wrap: wrap;
+        row-gap: 35px;
+        padding: 0 10px;
+    }
+}

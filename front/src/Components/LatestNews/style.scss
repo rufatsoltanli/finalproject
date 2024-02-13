@@ -1,0 +1,92 @@
+.latestNews {
+    padding: 5% 0 15% 0;
+
+    .cardCont {
+        padding-top: 3%;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+
+        .card {
+            max-width: 430px;
+            position: relative;
+
+            .img {
+                width: 100%;
+
+                img {
+                    width: 100%;
+                    border-radius: 15px;
+                }
+
+                .date {
+                    background-color: #1ecb15;
+                    position: absolute;
+                    text-align: center;
+                    padding: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    color: white;
+                    border-radius: 10px;
+                    left: 15px;
+                    top: 15px;
+
+                    .number {
+                        font-size: 30px;
+                        font-weight: 900;
+                    }
+                }
+            }
+
+            .textCont {
+                border-radius: 20px;
+                width: 80%;
+                background-color: rgb(255, 255, 255);
+                padding: 35px;
+                position: absolute;
+                display: flex;
+                gap: 15px;
+                flex-direction: column;
+                bottom: -120px;
+                left: 50%;
+                transform: translate(-50%);
+                border-bottom: 1px solid #1ecb15;
+
+                h4 {
+                    color: #031b4e;
+                }
+
+                .text {
+                    color: #4d5b7c;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .latestNews {
+        padding: 0 10px;
+        margin-bottom: 45%;
+
+        .cardCont {
+            row-gap: 200px;
+        }
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .latestNews {
+        padding: 0 10px;
+        margin-bottom: 65%;
+
+        .cardCont {
+            .card {
+                .textCont {
+                    bottom: -165px;
+                }
+            }
+        }
+    }
+}

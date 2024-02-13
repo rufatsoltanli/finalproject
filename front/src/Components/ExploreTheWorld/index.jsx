@@ -29,26 +29,7 @@ function ExploreTheWorld() {
                 <h4>Free Pick-Up & Drop-Off</h4>
                 <div className="text">Enjoy free pickup and drop-off services, adding an extra layer of ease to your car rental experience.</div>
             </div>
-            <div className="cardCont">
-                <div className="peopleCard">
-                    <div className="icon"><i className='fa-solid fa-quote-right'></i></div>
-                    <div className="header">Excellent Car Rent Service!</div>
-                    <div className="text"></div>
-                    <div className="name"></div>
-                </div>
-                <div className="peopleCard">
-                    <div className="icon"><i className='fa-solid fa-quote-right'></i></div>
-                    <div className="header">Excellent Car Rent Service!</div>
-                    <div className="text"></div>
-                    <div className="name"></div>
-                </div>
-                <div className="peopleCard">
-                    <div className="icon"><i className='fa-solid fa-quote-right'></i></div>
-                    <div className="header">Excellent Car Rent Service!</div>
-                    <div className="text"></div>
-                    <div className="name"></div>
-                </div>
-            </div>
+
         </div>
     )
 }

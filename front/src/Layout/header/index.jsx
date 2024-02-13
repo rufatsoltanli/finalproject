@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./style.scss"
 import { NavLink } from 'react-router-dom'
+import Hamburger from 'hamburger-react'
+
 
 function Header() {
+    const [isOpen, setOpen] = useState(false)
+
     return (
         <>
             <div className="headerTop">
@@ -64,6 +68,29 @@ function Header() {
                         <NavLink to={'/loginPage/'}>Login</NavLink>
                     </div>
                 </div>
+            </div>
+            <div className="responsiveNavBar">
+                <div className="icon">
+                    <img src="https://www.madebydesignesia.com/themes/rentaly/images/logo.png" alt="" />
+                </div>
+                <div className="hamburger">
+                    <Hamburger toggled={isOpen} toggle={setOpen} />
+                    <div className={`dropDown ${isOpen ? "visibleDropDown" : null}`}>
+                        <div className="links">
+                            <NavLink to={"/"}>Home</NavLink>
+                            <NavLink to={'/carsPage/'}>Cars</NavLink>
+                            <NavLink to={'/bookingPage/'}>Booking</NavLink>
+                            <NavLink to={'/newsPage/'}>News</NavLink>
+                            <NavLink to={'/aboutUsPage/'}>About Us</NavLink>
+                        </div>
+                        <div className="yourAccount">
+                            <NavLink to={'/profilePage/'}>Your Profile</NavLink>
+                            <NavLink to={'/registerPage/'}>Register</NavLink>
+                            <NavLink to={'/loginPage/'}>Login</NavLink>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </>
     )
