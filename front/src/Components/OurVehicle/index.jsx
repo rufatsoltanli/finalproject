@@ -36,7 +36,7 @@ function OurVehicle() {
                         }
                     }
                 }}>
-                    {apiData && apiData.map((x) => (
+                    {apiData && apiData.slice(0, 7).map((x) => (
                         <SplideSlide>
                             <div className="card">
                                 <div className="img">

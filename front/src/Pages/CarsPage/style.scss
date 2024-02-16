@@ -1,4 +1,234 @@
-.carsPage{
-    height: 100vh;
-    padding: 150px;
+.carsPage {
+
+    .carsHero {
+        margin: 70px 0;
+        background-image: url("https://www.madebydesignesia.com/themes/rentaly/images/background/2.jpg");
+        padding: 130px 0;
+        background-size: cover;
+        background-position: center;
+
+        h1 {
+            text-align: center;
+
+            color: white;
+        }
+    }
+
+    .pageCont {
+        margin: 100px 0;
+        display: flex;
+        width: 90%;
+        min-height: 100vh;
+        margin: 0 auto;
+
+        .sideBar {
+            width: 20%;
+
+            .rs-slider-handle::before {
+                border: 2px solid #1ecb15;
+            }
+
+            .rs-slider-progress-bar {
+                background-color: #1ecb15;
+                height: 4px;
+            }
+
+            .rs-slider {
+                max-width: 200px;
+            }
+
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            .slideBar {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                margin: 5px;
+                padding: 20px;
+                border: 1px solid rgb(211, 211, 211);
+                max-width: 250px;
+                border-radius: 10px;
+
+
+
+                .price {
+                    font-size: 18px;
+                    text-align: center;
+
+                    span {
+                        font-weight: 600;
+                        color: #1ecb15;
+                    }
+                }
+            }
+
+            .categories {
+                padding: 20px;
+                border: 1px solid rgb(211, 211, 211);
+                max-width: 250px;
+                margin: 5px;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                .chooseCategory {
+                    font-size: 18px;
+                    padding: 5px 10px;
+                    border: 1px solid #1ecb15;
+                    color: black;
+                    border-radius: 8px;
+                    width: max-content;
+                    transition: .6s;
+                    cursor: pointer;
+                }
+
+                .active {
+                    background-color: #1ecb15;
+                    color: white;
+                }
+            }
+        }
+
+        .pageContainer {
+            width: 80%;
+
+
+            .cardCont {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                column-gap: 30px;
+                row-gap: 20px;
+
+                .card {
+                    padding: 13px;
+                    max-width: 400px;
+                    min-height: 390px;
+                    border: 1px solid gray;
+                    border-radius: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                    transition: .4s;
+
+                    .img {
+                        height: 55%;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 15px;
+                        }
+                    }
+
+                    .info {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        padding: 0 15px;
+
+                        .name {
+                            display: flex;
+                            justify-content: space-between;
+                            color: #031b4e;
+
+                            span {
+                                color: black;
+                            }
+                        }
+
+                        .detailedInfo {
+                            display: flex;
+                            gap: 15px;
+
+                            div {
+                                font-weight: 600;
+                                color: #031b4e;
+
+                                i {
+                                    color: #1ecb15;
+                                }
+                            }
+                        }
+                    }
+
+                    .price {
+                        padding: 0 15px;
+                        align-items: center;
+                        display: flex;
+                        justify-content: space-between;
+
+                        .dailyRate {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+
+                            .daily {
+                                color: #4d5b7c;
+                            }
+
+                            .price {
+                                font-size: 26px;
+                                font-weight: 900;
+                                color: #031b4e;
+                            }
+                        }
+
+                        .button {
+                            height: max-content;
+
+                            .commonButton {
+                                background-color: #1ecb15;
+                                border-radius: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1300px) {
+        .carsPage {
+            width: 100%;
+            flex-direction: column;
+            padding: 10px;
+
+            .sideBar {
+                flex-direction: row;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 30px;
+
+                .slideBar {
+                    display: flex;
+                    gap: 5px;
+                }
+
+                .categories {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    max-width: none;
+                    height: max-content;
+                }
+            }
+
+            .pageContainer {
+                width: 100%;
+
+                .cardCont {
+                    width: 90%;
+                    margin: 0 auto;
+                    align-items: center;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+            }
+        }
+    }
 }

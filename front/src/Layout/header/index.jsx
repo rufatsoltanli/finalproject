@@ -58,7 +58,6 @@ function Header() {
                     <div className="links">
                         <NavLink to={"/"}>Home</NavLink>
                         <NavLink to={'/carsPage/'}>Cars</NavLink>
-                        <NavLink to={'/bookingPage/'}>Booking</NavLink>
                         <NavLink to={'/newsPage/'}>News</NavLink>
                         <NavLink to={'/aboutUsPage/'}>About Us</NavLink>
                     </div>
@@ -79,7 +78,6 @@ function Header() {
                         <div className="links">
                             <NavLink to={"/"}>Home</NavLink>
                             <NavLink to={'/carsPage/'}>Cars</NavLink>
-                            <NavLink to={'/bookingPage/'}>Booking</NavLink>
                             <NavLink to={'/newsPage/'}>News</NavLink>
                             <NavLink to={'/aboutUsPage/'}>About Us</NavLink>
                         </div>
