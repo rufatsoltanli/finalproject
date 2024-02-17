@@ -16,7 +16,7 @@ function Header() {
                             <span>
                                 <i className="fa-solid fa-phone"></i>
                             </span>
-                            +994 12 3334131
+                            +1 (775) 425-5522
                         </div>
                         <div className="email">
                             <span>

@@ -9,6 +9,8 @@ const rentallyUserScheme = new Schema({
         type: String,
         unique: true
     },
+    phone: Number   ,
+    name: String,
     password: String,
     role: {
         type: String,

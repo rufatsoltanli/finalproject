@@ -1,6 +1,5 @@
 .countSection {
     padding: 5% 8%;
-    background-color: #1ecb15;
 
     .cardCont {
         display: grid;
@@ -17,11 +16,15 @@
             gap: 10px;
             text-align: center;
             border-radius: 15px;
+            box-shadow: rgba(111, 207, 140, 0.534) 0px 7px 29px 0px;
 
             .count {
                 font-size: 40px;
                 font-weight: 600;
-                color: #1ecb15;
+
+                .increasingNumber {
+                    color: #1ecb15 !important;
+                }
             }
 
             h4 {

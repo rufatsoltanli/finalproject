@@ -6,7 +6,6 @@ import ExploreTheWorld from '../../Components/ExploreTheWorld'
 import PeopleCards from '../../Components/PeopleCards'
 import LatestNews from '../../Components/LatestNews'
 import SlideInfinitive from '../../Components/SlideInfinitive'
-import CountSection from '../../Components/CoutsSections'
 
 function HomePage() {
   return (
@@ -17,7 +16,6 @@ function HomePage() {
       <ExploreTheWorld />
       <PeopleCards />
       <LatestNews/>
-      <CountSection/>
       <SlideInfinitive/>
     </div>
   )

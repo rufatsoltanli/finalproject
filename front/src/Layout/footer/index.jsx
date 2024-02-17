@@ -15,16 +15,15 @@ function Footer() {
       <div className="contactInfo">
         <h3>Contact Info</h3>
         <div className="location"><i className='fa-solid fa-location-dot'></i>08 W 36th St, New York, NY 10001</div>
-        <div className="phone"><i className='fa-solid fa-phone'></i>+994 12 3334131</div>
+        <div className="phone"><i className='fa-solid fa-phone'></i>+1 (775) 425-5522</div>
         <div className="email"><i className='fa-solid fa-envelope'></i>contact@rentaly.com</div>
       </div>
       <div className="links">
         <h3>Quick Links</h3>
         <div className="container">
-          <Link>Cars</Link>
-          <Link>Booking</Link>
-          <Link>News</Link>
-          <Link>About us</Link>
+          <Link to={"/carsPage/"}>Cars</Link>
+          <Link to={"/newsPage/"}>News</Link>
+          <Link to={"/aboutUsPage/"}>About us</Link>
         </div>
       </div>
       <div className="social">

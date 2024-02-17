@@ -1,0 +1,312 @@
+.aboutUsPage {
+    margin-top: 4%;
+
+
+    h1 {
+        text-align: center;
+    }
+
+    .weOffer {
+        margin: 2% 0;
+
+        .textCont {
+            width: 80%;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-content: space-between;
+
+            .mainText {
+                font-size: 38px;
+                color: #031b4e;
+                font-weight: 700;
+
+                span {
+                    color: #1ecb15;
+                }
+            }
+
+            .smallText {
+                font-size: 16px;
+            }
+        }
+
+    }
+
+    .boardsOfDirectors {
+        min-height: 85vh;
+        background-image: url("https://www.madebydesignesia.com/themes/rentaly/images/background/8.jpg");
+        display: grid;
+        background-position: center;
+        place-items: center;
+        background-attachment: fixed;
+
+        .cardCont {
+            width: 80%;
+            height: max-content;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+
+            .card {
+                height: 420px;
+                width: 320px;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+
+                .name {
+                    font-size: 22px;
+                    color: white;
+                    font-weight: 600;
+                }
+
+                .profession {
+                    color: white;
+                }
+
+                .img {
+                    position: relative;
+                    width: 100%;
+                    overflow: hidden;
+                    border-radius: 10px;
+
+                    img {
+                        width: 100%;
+                        transition: .4s;
+
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                    }
+
+                    .iconCont {
+                        position: absolute;
+                        bottom: 15%;
+                        left: 50%;
+                        transform: translate(-50%);
+                        display: flex;
+                        gap: 35px;
+                        font-size: 14px;
+
+                        i {
+                            color: white;
+                            background-color: #1ecb15;
+                            padding: 10px;
+                            border-radius: 5px;
+                            border: 1px solid #1ecb15;
+                            cursor: pointer;
+                            transition: .4s;
+
+                            &:hover {
+                                background-color: rgb(255, 255, 255);
+                                color: #1ecb15;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+    .featuresHighlight {
+        margin: 3% 0;
+
+        .container {
+            margin: 0 auto;
+            width: 80%;
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+
+            .carPhoto {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        .classAndRoad {
+            .class {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+
+                .icon {
+                    i {
+                        font-size: 24px;
+                        padding: 14px;
+                        background-color: #1ecb15;
+                        color: white;
+                        border-radius: 10px;
+                    }
+                }
+
+                .textCont {
+                    * {
+                        padding: 5px 0;
+                    }
+
+                    h6 {
+                        color: #031b4e;
+                    }
+                }
+            }
+
+            .road {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+
+                .icon {
+                    i {
+                        font-size: 24px;
+                        padding: 14px;
+                        background-color: #1ecb15;
+                        color: white;
+                        border-radius: 10px;
+                    }
+                }
+
+                .textCont {
+                    * {
+                        padding: 5px 0;
+                    }
+
+                    h6 {
+                        color: #031b4e;
+                    }
+                }
+            }
+        }
+
+        .qualityAndPickUp {
+            text-align: end;
+
+            .quality {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+
+                .icon {
+                    i {
+                        font-size: 24px;
+                        padding: 14px;
+                        background-color: #1ecb15;
+                        color: white;
+                        border-radius: 10px;
+                    }
+                }
+
+                .textCont {
+                    * {
+                        padding: 5px 0;
+                    }
+
+                    h6 {
+                        color: #031b4e;
+                    }
+                }
+            }
+
+            .pickUp {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+
+                .icon {
+                    i {
+                        font-size: 24px;
+                        padding: 14px;
+                        background-color: #1ecb15;
+                        color: white;
+                        border-radius: 10px;
+                    }
+                }
+
+                .textCont {
+                    * {
+                        padding: 5px 0;
+                    }
+
+                    h6 {
+                        color: #031b4e;
+                    }
+                }
+            }
+        }
+    }
+
+    .callUs {
+        min-height: 50vh;
+        width: 80%;
+        margin: 2% auto;
+        margin-top: 6%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+
+        .img {
+            background-image: url("https://www.cloudtalk.io/wp-content/uploads/2021/12/illustration-working-in-a-call-centrum.png");
+            background-position: center;
+            background-size: cover;
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 15px;
+            color: #031b4e;
+            padding: 15px;
+
+            div {
+                font-weight: 500;
+                font-size: 24px;
+            }
+
+            i {
+                color: #1ecb15;
+                margin-right: 15px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .aboutUsPage {
+        .weOffer {
+            .textCont {
+                grid-template-columns: 1fr;
+                gap: 40px;
+
+                .mainText {
+                    text-align: center;
+                }
+            }
+        }
+
+        .featuresHighlight {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .boardsOfDirectors {
+            .cardCont {
+                padding-top: 30px;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                column-gap: 40px;
+            }
+        }
+    }
+
+}

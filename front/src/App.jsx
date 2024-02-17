@@ -7,6 +7,7 @@ import ProfilePage from "./Pages/ProfilePage"
 import LoginPage from "./Pages/LoginPage"
 import RegisterPage from "./Pages/RegisterPage"
 import AboutUsPage from "./Pages/AboutUsPage"
+import DetailPage from "./Pages/DetailPage"
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
             <Route path="/profilePage/" element={<ProfilePage />} />
             <Route path="/loginPage" element={<LoginPage />} />
             <Route path="/registerPage" element={<RegisterPage />} />
+            <Route path="/detailPage/:id" element={<DetailPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
