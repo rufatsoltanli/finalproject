@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import { Splide, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/react-splide/css';
-import CommonTitle from '../Title';
+
 import Button from '../CommonComponents/button';
 import "./style.scss"
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import { useNavigate } from 'react-router-dom';
 
-function OurVehicle() {
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+
+function SwiperOurVehicle() {
     const [apiData, setApiData] = useState([])
 
     useEffect(() => {
@@ -15,32 +21,43 @@ function OurVehicle() {
             .then(data => setApiData(data))
     }, [])
 
-
+    const detail = useNavigate()
     return (
-        <div className='ourVehicle'>
-            <CommonTitle smalltext={"Driving your dreams to reality with an exquisite fleet of versatile vehicles for unforgettable journeys."} maintext={"Our Vehicle Fleet"} />
+        <div className="swiperOurVehicle">
             <div className="slide">
-                <Splide options={{
-                    rewind: true,
-                    width: "100%",
-                    height: "100%",
-                    gap: '1rem',
-                    perPage: 3,
-                    focus: 'center',
-                    breakpoints: {
+                <Swiper
+                    modules={[Navigation]}
+                    navigation={true}
+                    spaceBetween={50}
+                    slidesPerView={3}
+                    onSlideChange={() => console.log('slide change')}
+                    onSwiper={(swiper) => console.log(swiper)}
+                    breakpoints={{
                         1050: {
-                            perPage: 2
+                            slidesPerView: 3,
+                            spaceBetween: 50,
                         },
                         750: {
-                            perPage: 1,
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+
+                        },
+                        320: {
+                            slidesPerView: 1,
+
+                        },
+                        0: {
+                            slidesPerView: 1,
+
                         }
-                    }
-                }}>
+
+                    }}
+                >
                     {apiData && apiData.slice(0, 7).map((x) => (
-                        <SplideSlide>
+                        <SwiperSlide>
                             <div className="card">
                                 <div className="img">
-                                    <img src={x.image} alt="" />
+                                    <img src={x.image[0]} alt="" />
                                 </div>
                                 <div className="info">
                                     <div className="name">{x.name} <span><i className='fa-solid fa-heart'></i></span></div>
@@ -57,17 +74,16 @@ function OurVehicle() {
                                         <span className='daily'>Daily rate from</span>
                                         <span className='price'>${x.price}</span>
                                     </div>
-                                    <div className="button">
+                                    <div className="button" onClick={() => detail(`/detailPage/${x._id}`)}>
                                         <Button>Rent Now</Button>
                                     </div>
                                 </div>
                             </div>
-                        </SplideSlide>
-                    ))}
-                </Splide>
+                        </SwiperSlide>))}
+                </Swiper>
             </div>
-        </div>
+        </div >
     )
 }
 
-export default OurVehicle
+export default SwiperOurVehicle

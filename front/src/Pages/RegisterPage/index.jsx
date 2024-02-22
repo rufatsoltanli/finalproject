@@ -1,8 +1,12 @@
 import React from 'react'
+import "./style.scss"
+import RegisterFormik from '../../Components/RegisterFormik'
 
 function RegisterPage() {
   return (
-    <div>RegisterPage</div>
+    <div className='registerPage'>
+      <RegisterFormik />
+    </div>
   )
 }
 

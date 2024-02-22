@@ -3,6 +3,7 @@ import "./style.scss"
 import Button from '../../Components/CommonComponents/button'
 import RangeSlider from "rsuite/RangeSlider";
 import "rsuite/dist/rsuite.css";
+import { useNavigate } from 'react-router-dom';
 function CarsPage() {
 
   const [choosenCarCategory, setChoosenCarCategory] = useState("")
@@ -23,46 +24,47 @@ function CarsPage() {
       .then(data => setApiData(data))
   }, [])
 
-
+  const detail = useNavigate()
 
   return (
     <div className='carsPage'>
       <div className="carsHero">
         <h1>Our Cars</h1>
       </div>
-      <div className="pageCont"><div className="sideBar">
-        <div className="slideBar">
-          <h4>Price:</h4>
-          <RangeSlider defaultValue={[100, 320]} min={100} max={320} onChange={handleRanges} />
-          <div className="price">
-            From <span>{firstValue}</span> to <span>{secondValue}</span>
+      <div className="pageCont">
+        <div className="sideBar">
+          <div className="slideBar">
+            <h4>Price:</h4>
+            <RangeSlider defaultValue={[100, 320]} min={100} max={320} onChange={handleRanges} />
+            <div className="price">
+              From <span>{firstValue}</span> to <span>{secondValue}</span>
+            </div>
+          </div>
+          <div className="categories">
+            <h4>Category:</h4>
+            <div className={`chooseCategory ${choosenCarCategory === "" ? "active" : null}`} onClick={() => { setChoosenCarCategory("") }}>
+              All
+            </div>
+            <div className={`chooseCategory ${choosenCarCategory === "SUV" ? "active" : null}`} onClick={() => { setChoosenCarCategory("SUV") }}>
+              SUV
+            </div>
+            <div className={`chooseCategory ${choosenCarCategory === "Hatchback" ? "active" : null}`} onClick={() => { setChoosenCarCategory("Hatchback") }}>
+              Hatchback
+            </div>
+            <div className={`chooseCategory ${choosenCarCategory === "Sedan" ? "active" : null}`} onClick={() => { setChoosenCarCategory("Sedan") }}>
+              Sedan
+            </div>
+            <div className={`chooseCategory ${choosenCarCategory === "Sport Car" ? "active" : null}`} onClick={() => { setChoosenCarCategory("Sport Car") }}>
+              Sport Car
+            </div>
+            <div className={`chooseCategory ${choosenCarCategory === "Minivan" ? "active" : null}`} onClick={() => { setChoosenCarCategory("Minivan") }}>
+              Minivan
+            </div>
+            <div className={`chooseCategory ${choosenCarCategory === "Truck" ? "active" : null}`} onClick={() => { setChoosenCarCategory("Truck") }}>
+              Truck
+            </div>
           </div>
         </div>
-        <div className="categories">
-          <h4>Category:</h4>
-          <div className={`chooseCategory ${choosenCarCategory === "" ? "active" : null}`} onClick={() => { setChoosenCarCategory("") }}>
-            All
-          </div>
-          <div className={`chooseCategory ${choosenCarCategory === "SUV" ? "active" : null}`} onClick={() => { setChoosenCarCategory("SUV") }}>
-            SUV
-          </div>
-          <div className={`chooseCategory ${choosenCarCategory === "Hatchback" ? "active" : null}`} onClick={() => { setChoosenCarCategory("Hatchback") }}>
-            Hatchback
-          </div>
-          <div className={`chooseCategory ${choosenCarCategory === "Sedan" ? "active" : null}`} onClick={() => { setChoosenCarCategory("Sedan") }}>
-            Sedan
-          </div>
-          <div className={`chooseCategory ${choosenCarCategory === "Sport Car" ? "active" : null}`} onClick={() => { setChoosenCarCategory("Sport Car") }}>
-            Sport Car
-          </div>
-          <div className={`chooseCategory ${choosenCarCategory === "Minivan" ? "active" : null}`} onClick={() => { setChoosenCarCategory("Minivan") }}>
-            Minivan
-          </div>
-          <div className={`chooseCategory ${choosenCarCategory === "Truck" ? "active" : null}`} onClick={() => { setChoosenCarCategory("Truck") }}>
-            Truck
-          </div>
-        </div>
-      </div>
         <div className="pageContainer">
           <div className="cardCont">
             {apiData && apiData
@@ -71,7 +73,7 @@ function CarsPage() {
               .map((x) => (
                 <div className="card">
                   <div className="img">
-                    <img src={x.image} alt="" />
+                    <img src={x.image[0]} alt="" />
                   </div>
                   <div className="info">
                     <div className="name">{x.name} <span><i className='fa-solid fa-heart'></i></span></div>
@@ -88,7 +90,7 @@ function CarsPage() {
                       <span className='daily'>Daily rate from</span>
                       <span className='price'>${x.price}</span>
                     </div>
-                    <div className="button">
+                    <div className="button" onClick={() => detail(`/detailPage/${x._id}`)}>
                       <Button>Rent Now</Button>
                     </div>
                   </div>

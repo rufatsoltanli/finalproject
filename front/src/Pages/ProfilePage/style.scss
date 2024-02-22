@@ -1,0 +1,66 @@
+.profilePage {
+    background-color: #f5f8fa;
+
+    .pageCont {
+        margin: 0 auto;
+        width: 80%;
+        padding: 6% 0;
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+
+        .profileInfo {
+            .ordersCont {
+                gap: 15px;
+                display: flex;
+            }
+        }
+
+        .profileCard {
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            width: 23%;
+            background-color: white;
+            padding: 50px 25px;
+            border-radius: 15px;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            text-align: center;
+
+            .name {
+                color: #031b4e;
+                font-weight: 600;
+            }
+
+            span {
+                display: block;
+                padding-bottom: 5px;
+                color: #1ecb15;
+                font-weight: 500;
+            }
+
+            .signOut {
+                background-color: #ffffff;
+                border: 1px solid #1ecb15;
+                border-radius: 5px;
+                padding: 6px 30px;
+                color: #1ecb15;
+                transition: .4s;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: #ff0000;
+                    border: 1px solid red;
+                    color: white;
+                }
+            }
+        }
+
+        .profileInfo {
+            width: 70%;
+        }
+    }
+}

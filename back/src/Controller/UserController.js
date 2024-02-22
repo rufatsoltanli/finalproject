@@ -50,3 +50,13 @@ export const deleteUserByID = async (req, res) => {
         res.send(error.message)
     }
 }
+
+export const getBookingsOfUsers = async (req, res) => {
+    try {
+        const { id } = req.params
+        const data = await RentallyUserModel.findById(id).populate("bookings")
+        res.send(data)
+    } catch (error) {
+        res.send(error.message)
+    }
+}

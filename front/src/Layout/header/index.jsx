@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import "./style.scss"
 import { NavLink } from 'react-router-dom'
 import Hamburger from 'hamburger-react'
+import { JWTContext } from '../../Context/JwtContext'
+import { jwtDecode } from 'jwt-decode'
 
 
 function Header() {
     const [isOpen, setOpen] = useState(false)
+    const { token, addToken, decodedToken, logOut } = useContext(JWTContext)
 
     return (
         <>
@@ -58,13 +61,14 @@ function Header() {
                     <div className="links">
                         <NavLink to={"/"}>Home</NavLink>
                         <NavLink to={'/carsPage/'}>Cars</NavLink>
+                        {decodedToken && decodedToken.role === "Admin" ? <NavLink to={"/adminPage/"}>Admin Page</NavLink> : null}
                         <NavLink to={'/newsPage/'}>News</NavLink>
                         <NavLink to={'/aboutUsPage/'}>About Us</NavLink>
                     </div>
                     <div className="yourAccount">
-                        <NavLink to={'/profilePage/'}>Your Profile</NavLink>
-                        <NavLink to={'/registerPage/'}>Register</NavLink>
-                        <NavLink to={'/loginPage/'}>Login</NavLink>
+                        {token ? <NavLink to={'/profilePage/'}>Your Profile</NavLink> : <>
+                            <NavLink to={'/registerPage/'}>Register</NavLink>
+                            <NavLink to={'/loginPage/'}>Login</NavLink></>}
                     </div>
                 </div>
             </div>
@@ -82,9 +86,10 @@ function Header() {
                             <NavLink to={'/aboutUsPage/'}>About Us</NavLink>
                         </div>
                         <div className="yourAccount">
-                            <NavLink to={'/profilePage/'}>Your Profile</NavLink>
-                            <NavLink to={'/registerPage/'}>Register</NavLink>
-                            <NavLink to={'/loginPage/'}>Login</NavLink>
+
+                            {token ? <NavLink to={'/profilePage/'}>Your Profile</NavLink> : <>
+                                <NavLink to={'/registerPage/'}>Register</NavLink>
+                                <NavLink to={'/loginPage/'}>Login</NavLink></>}
                         </div>
                     </div>
                 </div>

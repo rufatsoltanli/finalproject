@@ -4,30 +4,30 @@ import "./style.scss"
 function SlideInfinitive() {
     return (
         <div className='slideInfinitive'>
-            <div class="slider">
-                <div class="slide-track">
-                    <div class="slide">
+            <div className="slider">
+                <div className="slide-track">
+                    <div className="slide">
                         Truck
                     </div>
-                    <div class="slide">
+                    <div className="slide">
                         Sedan
                     </div>
-                    <div class="slide">
+                    <div className="slide">
                         Sport Cars
                     </div>
-                    <div class="slide">
+                    <div className="slide">
                         Minivan
                     </div>
-                    <div class="slide">
+                    <div className="slide">
                         Exotic Cars
                     </div>
-                    <div class="slide">
+                    <div className="slide">
                         Hatchback
                     </div>
-                    <div class="slide">
+                    <div className="slide">
                         Convertible
                     </div>
-                    <div class="slide">
+                    <div className="slide">
                         Coupe
                     </div>
                 </div>

@@ -5,6 +5,7 @@ import { CarsRouter } from './src/Router/CarsRouter.js'
 import 'dotenv/config'
 import { UserRouter } from './src/Router/UserRouter.js'
 import { AuthRouter } from './src/Router/AuthRouter.js'
+import { BookingRouter } from './src/Router/BookingRouter.js'
 
 const app = express()
 const port = process.env.PORT
@@ -14,6 +15,8 @@ app.use(cors())
 app.use("/cars/", CarsRouter)
 app.use("/users/", UserRouter)
 app.use("/", AuthRouter)
+app.use("/booking/", BookingRouter)
+
 
 
 mongoose.connect(process.env.DB_KEY)

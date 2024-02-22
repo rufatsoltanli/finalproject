@@ -6,11 +6,11 @@ const rentallyCarsScheme = new Schema({
     year: Number,
     fuel: String,
     description: String,
-    image: String,
+    interiorColor: String,
+    image: [String],
     color: String,
-    name:String,
+    name: String,
 });
 
 export const RentallyCarsModel = mongoose.model('RentallyCars', rentallyCarsScheme);
 
-    

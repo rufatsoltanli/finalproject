@@ -1,7 +1,9 @@
 import { RentallyCarsModel } from "../Model/CarsModel.js"
 
 
-export const getCars = async (req, res) => {
+export const 
+
+getCars = async (req, res) => {
     try {
         const data = await RentallyCarsModel.find({})
         res.send(data)
@@ -21,8 +23,8 @@ export const getCarsById = async (req, res) => {
 
 export const postCars = async (req, res) => {
     try {
-        const { price, type, year, fuel, description, color, image, name } = req.body
-        const data = new RentallyCarsModel({ price, type, year, fuel, description, color, image, name })
+        const { price, type, year, fuel, description, color, image, name,interiorColor } = req.body
+        const data = new RentallyCarsModel({ price, type, year, fuel, description, color, image, name,interiorColor })
         await data.save()
         res.send(data)
     } catch (error) {
@@ -33,8 +35,8 @@ export const postCars = async (req, res) => {
 export const updateCarByID = async (req, res) => {
     try {
         const { id } = req.params
-        const { price, type, year, fuel, description, color, image, name } = req.body
-        const data = await RentallyCarsModel.findByIdAndUpdate(id, { price, type, year, fuel, description, color, image, name })
+        const { price, type, year, fuel, description, color, image, name,interiorColor } = req.body
+        const data = await RentallyCarsModel.findByIdAndUpdate(id, { price, type, year, fuel, description, color, image, name,interiorColor })
         res.send(data)
     } catch (error) {
         res.send(error.message)
@@ -50,3 +52,4 @@ export const deleteCarByID = async (req, res) => {
         res.send(error.message)
     }
 }
+

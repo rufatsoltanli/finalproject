@@ -9,9 +9,9 @@ const rentallyUserScheme = new Schema({
         type: String,
         unique: true
     },
-    phone: Number   ,
-    name: String,
+    phone: Number,
     password: String,
+    bookings: [{ type: Schema.Types.ObjectId, ref: 'RentallyBooking' }],
     role: {
         type: String,
         default: "User",

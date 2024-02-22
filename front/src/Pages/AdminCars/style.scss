@@ -1,0 +1,113 @@
+.adminCars {
+    min-height: 100vh;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .userTextCont {
+        width: 487.5px;
+        display: flex;
+        padding: 10px 10%;
+        font-size: 20px;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid black;
+        border-bottom: none;
+        margin-top: 100px;
+    }
+.createCar {
+    margin-top: 5%;
+}
+.editCar{
+    margin-top: 5%;
+}
+    form {
+
+        border: 1px solid gainsboro;
+        border-radius: 15px;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 25px;
+        margin: 4% auto;
+
+
+        .error {
+            color: red;
+        }
+
+        label {
+            font-size: 15px;
+            font-weight: 600;
+            color: #031b4e;
+        }
+
+        input {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+
+        button {
+            padding: 7px 0;
+            background-color: #1ecb15;
+            color: white;
+            border-radius: 5px;
+        }
+    }
+
+    i {
+        transition: .4s;
+        cursor: pointer;
+
+        &:hover {
+            color: green;
+
+        }
+    }
+
+
+    .admPage {
+        position: absolute;
+        left: 5%;
+        top: 18%;
+        font-size: 20px;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        padding: 0px;
+    }
+
+    table {
+        margin-bottom: 30px;
+
+        img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        }
+    }
+
+    h4 {
+        color: red;
+        cursor: pointer;
+    }
+
+    text-align: center;
+
+    .fa-x {
+        color: black;
+        transition: .4s;
+
+        &:hover {
+            cursor: pointer;
+            color: red;
+        }
+    }
+}

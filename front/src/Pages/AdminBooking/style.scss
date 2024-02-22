@@ -1,0 +1,53 @@
+.adminBooking {
+    min-height: 100vh;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        padding: 0px;
+    }
+
+    table {
+        margin: 4% auto;
+    }
+h4{
+    color: red;
+}
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 25px;
+        border: 1px solid gainsboro;
+
+
+        .error {
+            color: red;
+        }
+
+        label {
+            font-size: 15px;
+            font-weight: 600;
+            color: #031b4e;
+        }
+
+        input {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+
+        button {
+            padding: 7px 0;
+            background-color: #1ecb15;
+            color: white;
+            border-radius: 5px;
+        }
+    }
+}

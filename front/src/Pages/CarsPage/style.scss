@@ -190,8 +190,12 @@
         }
     }
 
-    @media only screen and (max-width: 1300px) {
-        .carsPage {
+
+}
+
+@media only screen and (max-width: 1300px) {
+    .carsPage {
+        .pageCont {
             width: 100%;
             flex-direction: column;
             padding: 10px;
@@ -230,5 +234,7 @@
                 }
             }
         }
+
+
     }
 }

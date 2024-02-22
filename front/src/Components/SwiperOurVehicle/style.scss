@@ -1,9 +1,10 @@
-.ourVehicle {
+.swiperOurVehicle {
     margin: 4% 0;
 
     .slide {
         margin: 0 auto;
         width: 80%;
+        --swiper-theme-color: #2bff00;
 
         .card {
             padding: 13px;
@@ -91,12 +92,15 @@
     }
 }
 
-
 @media only screen and (max-width: 750px) {
-    .ourVehicle {
+    .swiperOurVehicle {
         .slide {
             .card {
                 margin: 0 auto;
+
+                .swiperSlide {
+                    width: max-content;
+                }
             }
         }
     }
