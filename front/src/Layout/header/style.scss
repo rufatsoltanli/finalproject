@@ -87,6 +87,10 @@
         position: relative;
 
         .dropDown {
+            a {
+                color: black;
+            }
+
             background-color: white;
             position: absolute;
             display: flex;
@@ -96,15 +100,21 @@
             height: 0;
             overflow: hidden;
             left: 0;
-            top: 60px;
+            top: 55px;
             transition: .4s;
             opacity: 0;
 
             .links {
                 display: flex;
                 gap: 5px;
-
                 flex-direction: column;
+
+            }
+
+            .yourAccount {
+                a {
+                    display: block;
+                }
             }
         }
 

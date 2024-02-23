@@ -1,10 +1,13 @@
 import React from 'react'
 import JwtContextProvider from './JwtContext'
+import WishlistProvider from './WishlistContext'
 
 function ContextProvider({ children }) {
     return (
         <JwtContextProvider>
-            {children}
+            <WishlistProvider>
+                {children}
+            </WishlistProvider>
         </JwtContextProvider>
     )
 }

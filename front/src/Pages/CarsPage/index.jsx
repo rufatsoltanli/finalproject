@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./style.scss"
 import Button from '../../Components/CommonComponents/button'
 import RangeSlider from "rsuite/RangeSlider";
 import "rsuite/dist/rsuite.css";
 import { useNavigate } from 'react-router-dom';
+import { WishlistContext } from '../../Context/WishlistContext';
+
 function CarsPage() {
+
+  const { toggleItemWishlist, wishlist } = useContext(WishlistContext)
 
   const [choosenCarCategory, setChoosenCarCategory] = useState("")
 
@@ -76,7 +80,7 @@ function CarsPage() {
                     <img src={x.image[0]} alt="" />
                   </div>
                   <div className="info">
-                    <div className="name">{x.name} <span><i className='fa-solid fa-heart'></i></span></div>
+                    <div className="name">{x.name} <span><i className={`${wishlist.some((item => item._id === x._id)) ? 'fa-solid' : 'fa-regular'} fa-heart`} onClick={() => { toggleItemWishlist(x) }}></i></span></div>
                     <div className="detailedInfo">
                       <div className="person"><i className='fa-solid fa-user'></i> 5</div>
                       <div className="luggage"><i className='fa-solid fa-briefcase'></i> 2</div>

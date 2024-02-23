@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 import Button from '../CommonComponents/button';
 import "./style.scss"
@@ -10,9 +10,12 @@ import { useNavigate } from 'react-router-dom';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
+import { WishlistContext } from '../../Context/WishlistContext';
 
 
 function SwiperOurVehicle() {
+    const { wishlist, wishlistLength, toggleItemWishlist } = useContext(WishlistContext)
+
     const [apiData, setApiData] = useState([])
 
     useEffect(() => {
@@ -60,7 +63,7 @@ function SwiperOurVehicle() {
                                     <img src={x.image[0]} alt="" />
                                 </div>
                                 <div className="info">
-                                    <div className="name">{x.name} <span><i className='fa-solid fa-heart'></i></span></div>
+                                    <div className="name">{x.name} <span><i className={`${wishlist.some((item => item._id === x._id)) ? 'fa-solid' : 'fa-regular'} fa-heart`} onClick={() => { toggleItemWishlist(x) }}></i></span></div>
                                     <div className="detailedInfo">
                                         <div className="person"><i className='fa-solid fa-user'></i> 5</div>
                                         <div className="luggage"><i className='fa-solid fa-briefcase'></i> 2</div>

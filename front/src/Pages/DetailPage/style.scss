@@ -24,13 +24,14 @@
         .carInfo {
             width: 75%;
             display: flex;
-
             justify-content: space-between;
+            gap: 15px;
 
             .img {
                 max-width: 650px;
 
                 img {
+                    object-fit: cover;
                     width: 100%;
                 }
             }

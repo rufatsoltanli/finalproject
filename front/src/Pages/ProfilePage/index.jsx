@@ -1,6 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
 import "./style.scss"
 import { JWTContext } from '../../Context/JwtContext'
+import { WishlistContext } from '../../Context/WishlistContext';
+import Button from '../../Components/CommonComponents/button';
+import { Link } from 'react-router-dom';
 
 
 function ProfilePage() {
@@ -46,7 +49,7 @@ function ProfilePage() {
   console.log(booking);
 
 
-
+  const { wishlist } = useContext(WishlistContext)
 
   return (
     <div className='profilePage'>
@@ -102,7 +105,7 @@ function ProfilePage() {
               </div>
               <div className="orders">
                 <div className="number">
-                  {booking.bookings && booking.bookings.filter((x) => x.status === "Canceled*").length}
+                  {booking.bookings && booking.bookings.filter((x) => x.status === "Canceled").length}
                 </div>
                 <div className="text">Canceled orders</div>
               </div>
@@ -135,17 +138,17 @@ function ProfilePage() {
             <table>
               <tr>
                 <th>Car Name</th>
-                <th>Pick-up Location</th>
-                <th>Drop-off Location</th>
-                <th>Days</th>
+                <th className='pickUpLoc'>Pick-up Location</th>
+                <th className='dropOffLoc'>Drop-off Location</th>
+                <th className='days'>Days</th>
                 <th>Status</th>
               </tr>
               {booking.bookings && booking.bookings.map((x) => (
                 <tr key={x._id} className='tableCar'>
                   <td className='tableCarName'>{x.chosenCarName}</td>
-                  <td>{x.pickUpLocation}</td>
-                  <td>{x.dropOffLocation}</td>
-                  <td>{x.day}</td>
+                  <td className='pickUpLoc'>{x.pickUpLocation}</td>
+                  <td className='dropOffLoc'>{x.dropOffLocation}</td>
+                  <td className='days'>{x.day}</td>
                   <td><span
                     className={
                       x.status === "Waiting" ? "waiting" :
@@ -156,7 +159,43 @@ function ProfilePage() {
               ))}
             </table>
           </div>
-          <div className="favoriteCars"></div>
+          <div className="favoriteCars">
+            <h3>
+              My favorite cars
+            </h3>
+            <div className="carCont">
+              {wishlist && wishlist.map((x) => (
+                <div className="car">
+                  <div className="img"><img src={x.image[0]} alt="" /></div>
+                  <div className="text">
+                    <div className="name"><span>{x.name}</span></div>
+                    <div className="detailedInfo">
+                      <div className="year"><span>Year:</span>{x.year}</div>
+                      <div className="fuel"><span>Fuel:</span>{x.fuel}</div>
+                      <div className="body"><span>Body:</span>{x.type}</div>
+                      <div className="color"><span>Color:</span>{x.color}</div>
+                      <div className="interior"><span>Interior color:</span>{x.interiorColor}</div>
+                      <div className="city"><span>Baku:</span>Baku</div>
+                    </div>
+                    <div className="price">
+                      <div className="dailyRate">
+                        <span className='daily'>Daily rate from</span>
+                        <span className='price'>${x.price}</span>
+                      </div>
+                      <div className="button" >
+
+                        <Link to={'/detailPage/' + x._id}>
+                          <Button>
+                            Rent Now
+                          </Button>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div >)
