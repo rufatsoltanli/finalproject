@@ -2,6 +2,51 @@
     background-color: #f5f8fa;
 
     .pageCont {
+
+        table {
+            text-align: center;
+
+            th {
+                padding: 10px 0;
+                color: gray;
+                font-weight: 400;
+                border-bottom: 1px solid #acacac;
+
+            }
+
+            td {
+                padding: 10px 0;
+                border-bottom: 1px solid #acacac;
+                color: #4d5b7c;
+            }
+
+            span {
+                font-size: 14px;
+                font-weight: 700;
+                color: white;
+                padding: 5px 7px;
+                border-radius: 10px;
+            }
+
+            .tableCarName {
+                color: #4d5b7c;
+                font-weight: 800;
+            }
+
+            .canceled {
+                background-color: #f93154;
+            }
+
+            .waiting {
+                background-color: #ffa900;
+
+            }
+
+            .completed {
+                background-color: #00b74a;
+            }
+        }
+
         margin: 0 auto;
         width: 80%;
         padding: 6% 0;
@@ -9,7 +54,30 @@
         justify-content: space-between;
         gap: 15px;
 
+        .recentOrdersCont {
+            background-color: rgb(255, 255, 255);
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            padding: 20px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+
+
+            .card {
+                display: flex;
+                justify-content: space-evenly;
+                gap: 25px;
+                text-align: center;
+            }
+        }
+
         .profileInfo {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
             .ordersCont {
                 gap: 15px;
                 display: flex;
@@ -18,9 +86,10 @@
 
         .profileCard {
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-            width: 23%;
+            width: 20%;
             background-color: white;
-            padding: 50px 25px;
+            padding: 10px 25px;
+            height: 300px;
             border-radius: 15px;
             font-size: 18px;
             display: flex;
@@ -60,7 +129,129 @@
         }
 
         .profileInfo {
-            width: 70%;
+            width: 77%;
+
+            .ordersCont {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                gap: 30px;
+
+                .card {
+                    height: 180px;
+                    display: grid;
+                    grid-template-rows: 1fr 1fr;
+                    gap: 15px;
+                    padding: 25px;
+                    background-color: white;
+                    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                    border-radius: 15px;
+
+                    .orders {
+                        .number {
+                            font-size: 44px;
+                            color: #031b4e;
+                            font-weight: 700;
+                        }
+
+                        .text {
+                            color: #acacac;
+                            font-size: 16px;
+                        }
+                    }
+
+                    i {
+                        color: #1ecb15;
+                        font-size: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .profilePage {
+        .pageCont {
+            flex-direction: column;
+
+            .profileCard {
+                flex-direction: row;
+                width: max-content;
+                height: auto;
+                margin: 2% auto;
+                padding: 15px;
+            }
+
+            .profileInfo {
+                align-self: center;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    .profilePage {
+        .pageCont {
+            .profileInfo {
+                .ordersCont {
+                    grid-template-columns: 1fr 1fr 1fr;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .profilePage {
+        .pageCont {
+            .profileInfo {
+                .ordersCont {
+                    grid-template-columns: 1fr 1fr;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    .profilePage {
+        .pageCont {
+            .profileCard {
+                flex-direction: column;
+            }
+
+            .profileInfo {
+                .ordersCont {
+                    grid-template-columns: 1fr 1fr;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .profilePage {
+        .pageCont {
+            .profileCard {
+                flex-direction: column;
+            }
+
+            .profileInfo {
+                .ordersCont {
+                    grid-template-columns: 1fr;
+                    align-items: center;
+
+                    .card {
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                    }
+                }
+            }
         }
     }
 }
