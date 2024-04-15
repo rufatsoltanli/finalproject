@@ -49,9 +49,6 @@ function AdminUser() {
 
   return (
     <div className='adminUser'>
-      <div className="admPage">
-        Go back to <NavLink to={"/adminPage/"}>Admin Page</NavLink>
-      </div>
       <div className="userTextCont">
         <div className="text" >Create a new User!</div>
         <div className="icon"><i className='fa-solid fa-square-plus' onClick={() => setCreateState(true)}></i></div>

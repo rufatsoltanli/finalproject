@@ -43,8 +43,9 @@ export const postBooking = async (req, res) => {
 export const updateBookingByID = async (req, res) => {
     try {
         const { id } = req.params
-        const { pickUpLocation, dropOffLocation, chosenCarName, day, bookerUsername, status } = req.body
-        const data = await RentallyBookingModel.findByIdAndUpdate(id, { pickUpLocation, dropOffLocation, chosenCarName, day, bookerUsername, status })
+        const booking = await RentallyBookingModel.findById(id)
+        const {newStatus} = req.body
+        const data = await RentallyBookingModel.findByIdAndUpdate(id, { pickUpLocation:booking.pickUpLocation, dropOffLocation:booking.dropOffLocation, chosenCarName:booking.chosenCarName, day:booking.day, bookerUsername:booking.bookerUsername, status: newStatus })
         res.send(data)
     } catch (error) {
         res.send(error.message)
@@ -64,7 +65,11 @@ export const deleteBookingByID = async (req, res) => {
 export const approveBookingByID = async (req, res) => {
     try {
         const { id } = req.params
-        const data = await RentallyBookingModel.findByIdAndUpdate(id, {  status:"Completed" })
+        const data = await RentallyBookingModel.findOneAndUpdate(
+            id,
+            { $set: { [status]: "Completed" } },
+            { new: true }
+        );
         res.send(data)
     } catch (error) {
         res.send(error.message)
@@ -74,7 +79,7 @@ export const approveBookingByID = async (req, res) => {
 export const cancelBookingByID = async (req, res) => {
     try {
         const { id } = req.params
-        const data = await RentallyBookingModel.findByIdAndUpdate(id, {  status:"Canceled" })
+        const data = await RentallyBookingModel.findByIdAndUpdate(id, { status: "Canceled" })
         res.send(data)
     } catch (error) {
         res.send(error.message)

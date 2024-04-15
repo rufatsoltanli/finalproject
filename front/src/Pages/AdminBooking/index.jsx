@@ -3,6 +3,7 @@ import "./style.scss"
 import { JWTContext } from '../../Context/JwtContext'
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { NavLink } from 'react-router-dom';
 
 function AdminBooking() {
 
@@ -27,9 +28,41 @@ function AdminBooking() {
       .then(res => res.text())
       .then(res => {
         firstFetch()
-        console.log(res)})
+        console.log(res)
+      })
   }
-
+  function approveBooking(id) {
+    fetch("http://localhost:3000/booking/" + id,
+      {
+        method: 'PUT',
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+          'Authorization': `${token}`
+        },
+        body: JSON.stringify({ newStatus: "Completed" })
+      })
+      .then(function (res) {
+        firstFetch()
+        console.log(res)
+      })
+      .catch(function (res) { console.log(res) })
+  }
+  function cancelBooking(id) {
+    fetch("http://localhost:3000/booking/" + id,
+      {
+        method: 'PUT',
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+          'Authorization': `${token}`
+        },
+        body: JSON.stringify({ newStatus: "Canceled" })
+      })
+      .then(function (res) {
+        firstFetch()
+        console.log(res)
+      })
+      .catch(function (res) { console.log(res) })
+  }
 
   function firstFetch() {
     fetch("http://localhost:3000/booking/", {
@@ -69,11 +102,17 @@ function AdminBooking() {
           <th>
             Status
           </th>
-          <th>
+          {/* <th>
             Edit booking
-          </th>
+          </th> */}
           <th>
             Delete booking
+          </th>
+          <th>
+            Approve booking
+          </th>
+          <th>
+            Cancel booking
           </th>
         </tr>
         {bookingData && bookingData.map((x) => (
@@ -84,13 +123,16 @@ function AdminBooking() {
             <th>{x.dropOffLocation}</th>
             <th>{x.day}</th>
             <th>{x.status}</th>
-            <th><i className='fa-solid fa-edit' onClick={() => setEditState(x)}></i></th>
-            <th><i className='fa-solid fa-x' onClick={() => deleteBooking(x._id)}></i></th>
+            {/* <th><i className='fa-solid fa-edit' onClick={() => setEditState(x)}></i></th> */}
+            <th><i className='fa-solid fa-trash' onClick={() => deleteBooking(x._id)}></i></th>
+            <th><i className='fa-solid fa-check' onClick={() => approveBooking(x._id)}></i></th>
+            <th><i className='fa-solid fa-x' onClick={() => cancelBooking(x._id)}></i></th>
+
           </tr>
         ))}
       </table>
 
-      {editState ? <> <Formik
+      {/* {editState ? <> <Formik
         initialValues={{ pickUpLocation: '', dropOffLocation: '', day: '', status: '' }}
         validationSchema={Yup.object({
           pickUpLocation: Yup.string()
@@ -165,7 +207,7 @@ function AdminBooking() {
         <h4 onClick={() => setEditState(null)}>Cancel editing</h4>
         <br />
       </>
-        : null}
+        : null} */}
     </div>
   )
 }

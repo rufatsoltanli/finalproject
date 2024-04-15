@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { WishlistContext } from '../../Context/WishlistContext';
+import CommonTitle from '../Title';
 
 
 function SwiperOurVehicle() {
@@ -27,6 +28,7 @@ function SwiperOurVehicle() {
     const detail = useNavigate()
     return (
         <div className="swiperOurVehicle">
+            <CommonTitle maintext={"Our Vehicle Fleet"} smalltext={"Driving your dreams to reality with an exquisite fleet of versatile vehicles for unforgettable journeys."} />
             <div className="slide">
                 <Swiper
                     modules={[Navigation]}
@@ -57,8 +59,8 @@ function SwiperOurVehicle() {
                     }}
                 >
                     {apiData && apiData.slice(0, 7).map((x) => (
-                        <SwiperSlide>
-                            <div className="card">
+                        <SwiperSlide key={x._id}>
+                            <div className="card" >
                                 <div className="img">
                                     <img src={x.image[0]} alt="" />
                                 </div>

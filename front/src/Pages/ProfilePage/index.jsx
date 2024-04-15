@@ -3,7 +3,7 @@ import "./style.scss"
 import { JWTContext } from '../../Context/JwtContext'
 import { WishlistContext } from '../../Context/WishlistContext';
 import Button from '../../Components/CommonComponents/button';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 function ProfilePage() {
@@ -15,6 +15,7 @@ function ProfilePage() {
 
   const [userData, setUserData] = useState([])
 
+  const logOutNavigate = useNavigate()
 
   useEffect(() => {
 
@@ -58,7 +59,9 @@ function ProfilePage() {
 
           <div className="name"><span>Username</span>{decodedToken && decodedToken.username}</div>
           <div className="email"><span>E-mail</span>{decodedToken && decodedToken.email}</div>
-          <div className="signOut" onClick={() => logOut()}>
+          <div className="signOut" onClick={() => { 
+            logOutNavigate('/')
+            logOut() }}>
             Sign out
           </div>
         </div>
@@ -113,28 +116,6 @@ function ProfilePage() {
           </div>
           <div className="recentOrdersCont">
             <h3>My Recent Orders</h3>
-            {/* <div className="tableTop">
-              <div className="carName">Car Name</div>
-              <div className="pickUpLoc">Pick Up Location</div>
-              <div className="dropOfLoc">Drop Off Location	</div>
-              <div className="day">Days</div>
-              <div className="status">Status</div>
-            </div>
-            {booking.bookings && booking.bookings.map((x) => (
-              <div className="card" key={x._id}>
-                <div className="carName">{x.chosenCarName}</div>
-                <div className="pickUpLoc">{x.pickUpLocation}</div>
-                <div className="dropOfLoc">{x.dropOffLocation}</div>
-                <div className="day">{x.day}</div>
-                <div className="status">
-                  <span className={
-                    x.status === "Waiting" ? "waiting" :
-                      x.status === "Completed" ? "completed" :
-                        x.status === "Canceled" ? "canceled" : null
-                  }>{x.status}</span>
-                </div>
-              </div>
-            ))} */}
             <table>
               <tr>
                 <th>Car Name</th>

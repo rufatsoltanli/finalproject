@@ -5,10 +5,13 @@ import RangeSlider from "rsuite/RangeSlider";
 import "rsuite/dist/rsuite.css";
 import { useNavigate } from 'react-router-dom';
 import { WishlistContext } from '../../Context/WishlistContext';
+import { JWTContext } from '../../Context/JwtContext';
 
 function CarsPage() {
 
   const { toggleItemWishlist, wishlist } = useContext(WishlistContext)
+
+  const { token, addToken, decodedToken, logOut, checkToken } = useContext(JWTContext)
 
   const [choosenCarCategory, setChoosenCarCategory] = useState("")
 
@@ -75,7 +78,7 @@ function CarsPage() {
               .filter((x) => x.price > firstValue && x.price < secondValue)
               .filter((x) => x.type.toLowerCase().includes(choosenCarCategory.toLowerCase()))
               .map((x) => (
-                <div className="card">
+                <div className="card" key={x._id}>
                   <div className="img">
                     <img src={x.image[0]} alt="" />
                   </div>
@@ -94,7 +97,10 @@ function CarsPage() {
                       <span className='daily'>Daily rate from</span>
                       <span className='price'>${x.price}</span>
                     </div>
-                    <div className="button" onClick={() => detail(`/detailPage/${x._id}`)}>
+                    <div className="button" onClick={() => {
+                      token ? detail(`/detailPage/${x._id}`) :
+                        detail('/loginPage/')
+                    }}>
                       <Button>Rent Now</Button>
                     </div>
                   </div>

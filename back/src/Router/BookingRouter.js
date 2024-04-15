@@ -14,6 +14,6 @@ BookingRouter.put('/:id', authMiddleware(["Admin"]), updateBookingByID)
 
 BookingRouter.delete('/:id', authMiddleware(["Admin"]), deleteBookingByID)
 
-BookingRouter.get('/approveBooking/:id', authMiddleware(["Admin"], approveBookingByID))
+BookingRouter.put('/approveBooking/:id', authMiddleware(["Admin"], approveBookingByID))
 
-BookingRouter.get('/cancelBooking/:id', authMiddleware(["Admin"], cancelBookingByID))
+BookingRouter.put('/cancelBooking/:id', authMiddleware(["Admin"], cancelBookingByID))

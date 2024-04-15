@@ -53,9 +53,6 @@ function AdminCars() {
 
   return (
     <div className='adminCars'>
-      <div className="admPage">
-        Go back to <NavLink to={"/adminPage/"}>Admin Page</NavLink>
-      </div>
 
       {editState ? <div className="editCar">
         <h2>Edit Car</h2>

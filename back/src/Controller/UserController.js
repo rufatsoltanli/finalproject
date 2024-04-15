@@ -21,8 +21,8 @@ export const getUserById = async (req, res) => {
 
 export const postUser = async (req, res) => {
     try {
-        const { username, email, password, phone, name } = req.body
-        const data = new RentallyUserModel({ username, email, password, phone, name })
+        const { username, email, password, phone, name, role } = req.body
+        const data = new RentallyUserModel({ username, email, password, phone, name, role })
         await data.save()
         res.send(data)
     } catch (error) {
@@ -33,8 +33,8 @@ export const postUser = async (req, res) => {
 export const updateUserByID = async (req, res) => {
     try {
         const { id } = req.params
-        const { username, email, password, phone, name } = req.body
-        const data = await RentallyUserModel.findByIdAndUpdate(id, { username, email, password, phone, name })
+        const { username, email, password, phone, name, role } = req.body
+        const data = await RentallyUserModel.findByIdAndUpdate(id, { username, email, password, phone, name, role })
         res.send(data)
     } catch (error) {
         res.send(error.message)

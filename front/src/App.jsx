@@ -31,8 +31,8 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/aboutUsPage/" element={<AboutUsPage />} />
             <Route path="/newsPage/" element={<NewsPage />} />
-            <Route path="/loginPage" element={<LoginPage />} />
-            <Route path="/registerPage" element={<RegisterPage />} />
+            <Route path="/loginPage/" element={<LoginPage />} />
+            <Route path="/registerPage/" element={<RegisterPage />} />
             <Route path="/carsPage/" element={<CarsPage />} />
             <Route element={<PrivateRoute />}>
               <Route path="/profilePage/" element={<ProfilePage />} />

@@ -2,38 +2,12 @@ import React, { createContext, useEffect, useState } from 'react'
 import useLocalStorage from '../hooks/useLocalStorage'
 import { jwtDecode } from 'jwt-decode'
 import Cookies from 'js-cookie'
+import { useNavigate } from 'react-router-dom'
 
 export const JWTContext = createContext()
 
 function JwtContextProvider({ children }) {
 
-    // const [token, setToken] = useState(Cookies.get("token") ? Cookies.get("token") : null)
-
-    // console.log(Cookies.get("token"));
-
-    // const [decodedToken, setDecodedToken] = useState(null)
-
-    // function addToken(value) {
-    //     setToken(value)
-    //     Cookies.set('token', value, { expires: 1 })
-    // }
-
-    // useEffect(() => {
-    //     (async (params) => {
-    //         if (token) {
-    //             console.log("iwleyir", token);
-    //             const tokenIsDecoded = await jwtDecode(token)
-    //             setDecodedToken(tokenIsDecoded)
-    //         }
-    //         console.log(decodedToken);
-    //     })()
-    // }, [token])
-
-    // function logOut() {
-    //     addToken(null)
-    //     setDecodedToken(null)
-    //     Cookies.remove('token')
-    // }
 
     const [token, setToken] = useState(null);
     const [decodedToken, setDecodedToken] = useState(null);
@@ -62,7 +36,7 @@ function JwtContextProvider({ children }) {
             if (!!token) {
                 refreshToken(token);
             }
-            else{
+            else {
                 setToken(false)
                 setDecodedToken(false)
             }
