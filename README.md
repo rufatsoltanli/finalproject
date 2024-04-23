@@ -1,4 +1,4 @@
-Rentally, copy of car booking site.
+Rentally, car booking site.
 
 Package used in FrontEnd:
 React.js
